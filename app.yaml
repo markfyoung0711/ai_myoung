@@ -1,1 +1,3 @@
-runtime: nodejs20
+service: ai-myoung
+runtime: custom
+env: flex
