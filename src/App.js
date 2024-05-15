@@ -3,6 +3,7 @@ import WeCanAgree from './WeCanAgree';
 import SoWhat from './SoWhat';
 import NotesAboutAuthor from './NotesAboutAuthor';
 import Subscribe from './Subscribe';
+import Projects from './Projects';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <WeCanAgree />
       <SoWhat />
       <NotesAboutAuthor />
+      <Projects />
       <Subscribe />
     </div>
   );

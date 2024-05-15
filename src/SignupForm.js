@@ -16,15 +16,20 @@ function SignupForm() {
     }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (userData.password !== userData.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
-    console.log('Form submitted', userData);
-    // Here you would typically handle the form submission, e.g., sending data to a server
-  };
+    const handleSubmit = (values, { setSubmitting }) => {
+    fetch('YOUR_BACKEND_ENDPOINT', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
+    })
+    .then(response => response.json())
+    .then(data => console.log('Success:', data))
+    .catch((error) => console.error('Error:', error))
+    .finally(() => setSubmitting(false));
+    };
+
 
   return (
     <div className="container mt-5">
